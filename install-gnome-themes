@@ -2,6 +2,12 @@
 
 #
 # This script installs the latest versions of some fine GNOME themes into the current user's ".themes" folder.
+# 
+# It has been forked by myself to work with SolydXK, a Debian Stretch based distro available here:
+# 	https://solydxk.com/downloads/solydx/download-solydx/
+# I also found that it works find without Gnome actually being installed.  The script works fine with XFCE too.
+# 
+# Here's info about the original author
 #
 # Get the most recent version of this script at:
 #
@@ -11,6 +17,7 @@
 #
 #     https://github.com/tliron/install-gnome-themes/blob/master/LICENSE
 #
+# 
 
 set -e
 
@@ -74,6 +81,7 @@ if [ "$REQUIREMENTS" == 1 ]; then
 	if [ "$OS" == 'Debian' ] ||
            [ "$OS" == 'Ubuntu' ] ||
            [ "$OS" == 'LinuxMint' ] ||
+           [ "$OS" == 'SolydXK' ] ||
            [ "$OS" == 'SPERIX-OS' ]; then
 		# Ubuntu GNOME comes with Numix (for 3.18) preinstalled, we will remove it to avoid confusion
 		sudo apt remove numix-gtk-theme
